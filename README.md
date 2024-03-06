@@ -1,2 +1,2 @@
-# lessontimes-api-examples
-Examples of the lessontimes API
+# szig-api-examples
+Examples of the school's APIs.
