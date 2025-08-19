@@ -2,7 +2,7 @@
 /// Represents all of the lessons.
 #[derive(Debug, serde::Deserialize, serde::Serialize)]
 pub struct LessonTimes {
-    lessontimes: Vec<Lesson>
+    lessontimes: Vec<Lesson>,
 }
 
 /// Create a type we can serialize into.
@@ -43,7 +43,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let lesson_times_ser = serde_json::from_str::<LessonTimes>(&lessontimes_text)?;
 
     println!("Serialized format:");
-    
+
     // We call debug so we can really show it is serialized lol
     dbg!(lesson_times_ser);
 
@@ -52,7 +52,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let calendar_text = calendar_req.text().await?;
 
     println!("Plaintext format: {calendar_text}");
-    
+
     let lesson_times_ser = serde_json::from_str::<Calendar>(&calendar_text)?;
 
     println!("Serialized format:");
